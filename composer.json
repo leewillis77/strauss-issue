@@ -1,0 +1,50 @@
+{
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Ademti\\Test\\": "src/"
+        },
+        "classmap": [
+            "vendor-prefixed/"
+        ]
+    },
+    "require-dev": {
+        "phpmd/phpmd": "^2.8"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "strauss"
+        ],
+        "post-update-cmd": [
+            "strauss"
+        ],
+        "phpmd": "./vendor/bin/phpmd src/ text phpmd-ruleset.xml"
+    },
+    "extra": {
+        "strauss": {
+            "target_directory": "vendor-prefixed",
+            "namespace_prefix": "Ademti\\Test\\Dependencies",
+            "classmap_prefix": "Ademti_Test_Dependencies",
+            "constant_prefix": "A_T_D_",
+            "packages": [],
+            "update_call_sites": [
+                "./src"
+            ],
+            "exclude_from_copy": {
+                "packages": [],
+                "namespaces": [],
+                "file_patterns": []
+            },
+            "exclude_from_prefix": {
+                "packages": [],
+                "namespaces": [],
+                "file_patterns": []
+            },
+            "namespace_replacement_patterns" : {
+            },
+            "delete_vendor_packages": true,
+            "delete_vendor_files": true
+        }
+    }
+}
